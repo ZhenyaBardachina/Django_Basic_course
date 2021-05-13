@@ -1,16 +1,16 @@
 [
   {
-    "category": "офис",
-    "name": "дубовый стол",
+    "category": "office",
+    "name": "oak table",
     "image": "product_img/promo-img2.jpg",
-    "short_desc": "ќбеденный стол из массива дуба",
-    "description": "ћассив дуба Ц экологически чистый материал, он не токсичен и полностью безопасен дл€ здоровь€",
+    "short_desc": "Solid oak dining table",
+    "description": "Solid oak is an environmentally friendly material, it is non-toxic and completely safe for health",
     "price": "125500.00",
     "quantity": 2
   },
   {
-    "category": "классика",
-    "name": "сосновый стол",
+    "category": "classic",
+    "name": "pine table",
     "image": "",
     "short_desc": "",
     "description": "",
@@ -18,20 +18,20 @@
     "quantity": 0
   },
   {
-    "category": "дом",
-    "name": "рабочий стул",
+    "category": "home",
+    "name": "work chair",
     "image": "product_img/controll.jpg",
-    "short_desc": "—тул дл€ письменного стола",
-    "description": "ќбеспечивает м€гкость и комфорт, а регулируемые наклон и высота сидень€ и спинки Ч оптимальную опору. Ётот стул прослужит вам долгие годы.",
+    "short_desc": "Desk chair",
+    "description": "Provides softness and comfort, while the adjustable seat and backrest tilt and height provide optimal support. This chair will serve you for years to come.",
     "price": "19990.70",
     "quantity": 17
   },
   {
-      "category": "модерн",
-      "name": "настольный торшер",
+      "category": "modern",
+      "name": "table lamp",
       "image": "product_img/product-31.jpg",
-      "short_desc": "—оздает м€гкое уютное освещение дл€ настроени€.",
-      "description": "ƒл€ сохранени€ низкой цены мы отказались от упаковочной коробки этого товара. Ѕлагодар€ выразительному дизайну светильник впишетс€ в любой интерьер и сделает уютным даже самый темный уголок вашего дома.",
+      "short_desc": "Creates soft, cozy mood lighting.",
+      "description": "To keep the price low, we have discarded the box for this product. Thanks to its expressive design, the lamp will fit into any interior and make even the darkest corner of your home cozy.",
       "price": "7999.50",
       "quantity": 25
   }
