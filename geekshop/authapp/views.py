@@ -1,26 +1,25 @@
 from django.contrib import auth
 from django.shortcuts import render, HttpResponseRedirect
 from django.urls import reverse
-from authapp.forms import ShopUserEditForm, ShopUserRegisterForm, ShopUserLoginForm
+from authapp.forms import ShopUserLoginForm, ShopUserRegisterForm, ShopUserEditForm
 
 
 def login(request):
-    form = ShopUserLoginForm(data=request.POST)
+    login_form = ShopUserLoginForm(data=request.POST)
+    if request.method == 'POST' and login_form.is_valid():
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
-    if request.method == 'POST' and form.is_valid():
-            username = request.POST.get('username')
-            password = request.POST.get('password')
-
-            user = auth.authenticate(username=username, password=password)
-            if user and user.is_active:
-                auth.login(request, user)
-                return HttpResponseRedirect(reverse('index'))
+        user = auth.authenticate(username=username, password=password)
+        if user and user.is_active:
+            auth.login(request, user)
+            return HttpResponseRedirect(reverse('index'))
     else:
         form = ShopUserLoginForm()
 
     context = {
         'page_title': 'вход',
-        'form': form,
+        'login_form': login_form,
     }
     return render(request, 'authapp/login.html', context)
 
@@ -37,15 +36,15 @@ def register(request):
         if register_form.is_valid():
             register_form.save()
             return HttpResponseRedirect(reverse('auth:login'))
-        else:
-            register_form = ShopUserRegisterForm()
+    else:
+        register_form = ShopUserRegisterForm()
 
-        context = {
-            'page_title': 'регистрация',
-            'register_form': register_form,
-        }
+    context = {
+        'page_title': 'регистрация',
+        'register_form': register_form,
+    }
 
-        return render(request, 'authapp/register.html', context)
+    return render(request, 'authapp/register.html', context)
 
 
 def edit(request):
@@ -54,12 +53,13 @@ def edit(request):
         if edit_form.is_valid():
             edit_form.save()
             return HttpResponseRedirect(reverse('auth:edit'))
-        else:
-            edit_form = ShopUserEditForm(instance=request.user)
+    else:
+        edit_form = ShopUserEditForm(instance=request.user)
 
-        context = {
-            'page_title': 'редактирование',
-            'edit_form': edit_form,
-        }
+    context = {
+        'page_title': 'редактирование',
+        'edit_form': edit_form,
+    }
 
-        return render(request, 'authapp/edit.html', context)
+    return render(request, 'authapp/edit.html', context)
+
